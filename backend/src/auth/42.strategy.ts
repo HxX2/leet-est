@@ -23,6 +23,7 @@ export class FortyTwoStrategy extends PassportStrategy(Strategy, '42') {
 			accessToken,
 			refreshToken,
 		};
-		// done(null, user);
+		console.log(user);
+		done(null, user);
 	}
 }

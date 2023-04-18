@@ -1,4 +1,4 @@
-import { Controller, Get, UseGuards } from '@nestjs/common';
+import { Controller, Get, UseGuards, Req, Res, Session } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { FortyTwoAuthGuard } from './42-auth.guard';
 
@@ -7,15 +7,11 @@ export class AuthController {
 
 	constructor(private configService: ConfigService) {}
 
-	@Get('login')
-	@UseGuards(FortyTwoAuthGuard)
-	handleLogin() {
-		return {msg: 'forty two login '};
-	}
-
 	@Get('redirect')
 	@UseGuards(FortyTwoAuthGuard)
-	handleRedirect() {
-		return {msg: 'forty two redirect'};
+	handleRedirect(@Req() req, @Res() res, @Session() session) {
+		const user = req.user;
+		session.user = user;
+		res.redirect('/api/profile');
 	}
 }
