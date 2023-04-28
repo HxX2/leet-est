@@ -1,6 +1,6 @@
 import { Card, Container, Row, Text, Image, Button, Spacer } from "@nextui-org/react";
 import Hello from "../assets/waving_hand_3d_default.png";
-import { FtIcon } from "../icons/FTIcon";
+import { FtIcon } from "../icons/FtIcon";
 import Background from "../component/Background";
 
 
