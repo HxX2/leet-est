@@ -1,10 +1,10 @@
 import { NextUIProvider } from '@nextui-org/react'
 import { getDocumentTheme } from "@nextui-org/react"
 import { useEffect, useState } from 'react';
-import { lightTheme, darkTheme } from "./conf/theme.ts";
-import Toggle from './component/Toggle.tsx'
-import Cards from './component/Cards.tsx';
-import './css/App.css'
+import { lightTheme, darkTheme } from "../conf/theme.ts";
+import Toggle from '../component/Toggle.tsx'
+import Cards from '../component/Cards.tsx';
+import '../css/App.css'
 
 
 
