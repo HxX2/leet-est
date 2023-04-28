@@ -5,6 +5,7 @@ import { lightTheme, darkTheme } from "../conf/theme.ts";
 import Toggle from '../component/Toggle.tsx'
 import Cards from '../component/Cards.tsx';
 import '../css/App.css'
+import Background from '../component/Background.tsx';
 
 
 
@@ -30,6 +31,7 @@ export default function App() {
 
 	return (
 		<NextUIProvider theme={isDark ? darkTheme : lightTheme}>
+			<Background />
 			<Toggle />
 			<Cards />
 		</NextUIProvider>
