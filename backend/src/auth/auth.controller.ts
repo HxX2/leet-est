@@ -7,11 +7,16 @@ export class AuthController {
 
 	constructor(private configService: ConfigService) {}
 
-	@Get('redirect')
+	@Get('callback')
 	@UseGuards(FortyTwoAuthGuard)
 	handleRedirect(@Req() req, @Res() res, @Session() session) {
 		const user = req.user;
 		session.user = user;
-		res.redirect('/api/profile');
+		res.redirect('/');
+	}
+
+	@Get('check')
+	authCheck(@Req() req, @Res({ passthrough: true }) res) {
+		return req.isAuthenticated();
 	}
 }

@@ -1,4 +1,4 @@
-import { Card, Container, Row, Text, Image, Button, Spacer } from "@nextui-org/react";
+import { Card, Container, Row, Text, Image, Button, Spacer, Link } from "@nextui-org/react";
 import Hello from "../assets/waving_hand_3d_default.png";
 import { FtIcon } from "../icons/FtIcon";
 import Background from "../component/Background";
@@ -26,11 +26,13 @@ export default function Login() {
 							<Text h1 >Welcome back</Text>
 							<Text h6 >leet us help you estimate the future</Text>
 							<Spacer x={10} y={1} />
-							<Button auto css={buttonCss} icon={<FtIcon />}>
-								<Text css={{ color: "inherit" }} size={13} weight="bold">
-									Continue with Intra
-								</Text>
-							</Button>
+							<Link href="https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-9fa115eac3b20757dd228a8e2aa97b9c7b7923e89b9746d127f68f4e42d47f97&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&response_type=code">
+								<Button auto css={buttonCss} icon={<FtIcon />}>
+									<Text css={{ color: "inherit" }} size={13} weight="bold">
+										Continue with Intra
+									</Text>
+								</Button>
+							</Link>
 						</Row>
 					</Card.Body>
 				</Card>
